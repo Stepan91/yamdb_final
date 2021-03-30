@@ -37,7 +37,7 @@ jobs:
         run: flake8 ./api ./api_yamdb
 
       - name: Test with pytest
-        run: pytest .
+        run: pytest ./pytests
   
   build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
