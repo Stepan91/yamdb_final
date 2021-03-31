@@ -20,12 +20,10 @@ services:
       - ./.env
     volumes:
       - ./static:/var/html/static
-      - ./media:/code/html/media
+      - ./media:/var/html/media
 
-  # В заданиии сказано "создайте докер-файл для nginx",
-  # поэтому изначально вывел в отдельный Dockerfile
   nginx:
-    image: nginx-alpine
+    image: nginx:1.19.8
     restart: unless-stopped
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
